@@ -2,6 +2,7 @@ package com.an.library.controllers;
 
 import com.an.library.models.Author;
 import com.an.library.services.AuthorService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -13,11 +14,12 @@ public class AuthorsController {
 
     private final AuthorService authorService;
 
+    @Autowired
     public AuthorsController(AuthorService authorService) {
         this.authorService = authorService;
     }
 
-    @PostMapping("/add")
+    @PostMapping("/create")
     public ResponseEntity<Author> addNewAuthor(@RequestBody Author author) {
         authorService.save(author);
         return ResponseEntity.status(HttpStatus.CREATED).body(author);

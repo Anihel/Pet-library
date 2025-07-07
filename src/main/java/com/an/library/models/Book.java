@@ -1,10 +1,11 @@
 package com.an.library.models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "book")
@@ -21,13 +22,16 @@ public class Book {
     private String title;
 
     @Column(name = "year_published")
-    private LocalDateTime published;
-
-    @Column(name = "genre")
-    private String genre;
+    private LocalDate published;
 
     @ManyToOne
     @JoinColumn(name = "author_id")
-    private Author owner;
+    @JsonBackReference
+    private Author author;
+
+    @ManyToOne
+    @JoinColumn(name = "genre_id")
+    @JsonBackReference
+    private Genre genre;
 
 }

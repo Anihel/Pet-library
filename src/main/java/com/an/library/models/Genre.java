@@ -8,10 +8,10 @@ import lombok.Setter;
 import java.util.List;
 
 @Entity
-@Table(name = "author")
-@Setter
+@Table(name = "genre")
 @Getter
-public class Author {
+@Setter
+public class Genre {
 
     @Id
     @Column(name = "id")
@@ -21,7 +21,7 @@ public class Author {
     @Column(name = "name")
     private String name;
 
-    @OneToMany(mappedBy = "author", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "genre", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonManagedReference
     private List<Book> books;
 
