@@ -21,6 +21,7 @@ jobs:
         image: postgres:17
         env:
           POSTGRES_DB: library_test
+          POSTGRES_URL: ${{ secrets.DB_LIBRARY_TEST_URL }}
           POSTGRES_USER: ${{ secrets.DB_LIBRARY_TEST_USERNAME }}
           POSTGRES_PASSWORD: ${{ secrets.DB_LIBRARY_TEST_PASSWORD }}
         ports:
@@ -47,6 +48,13 @@ jobs:
             echo "Waiting for postgres..."
             sleep 5
           done
+          
+      - name: Generate application-test.yml from template
+        run: |
+            sed -e "s|jdbc:postgresql://localhost:5432/library|${DB_LIBRARY_TEST_URL}|g" \
+                -e "s|username:|username: ${DB_LIBRARY_TEST_USERNAME}|g" \
+                -e "s|password:|password: ${DB_LIBRARY_TEST_PASSWORD}|g" \
+                src/main/resources/application-template.yml > src/main/resources/application-test.yml
 
       - name: Build and Test with Maven
         run: mvn clean test -Dspring.profiles.active=test
