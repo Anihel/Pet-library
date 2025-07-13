@@ -15,6 +15,9 @@ jobs:
       DB_LIBRARY_TEST_URL: ${{ secrets.DB_LIBRARY_TEST_URL }}
       DB_LIBRARY_TEST_USERNAME: ${{ secrets.DB_LIBRARY_TEST_USERNAME }}
       DB_LIBRARY_TEST_PASSWORD: ${{ secrets.DB_LIBRARY_TEST_PASSWORD }}
+      DB_LIBRARY_URL: ${{ secrets.DB_LIBRARY_URL }}
+      DB_LIBRARY_USERNAME: ${{ secrets.DB_LIBRARY_USERNAME }}
+      DB_LIBRARY_PASSWORD: ${{ secrets.DB_LIBRARY_PASSWORD }}
 
     services:
       postgres:
