@@ -12,8 +12,8 @@ public class GenreService {
         this.genreRepository = genreRepository;
     }
 
-    public void save(Genre genre) {
-        genreRepository.save(genre);
+    public Genre save(Genre genre) {
+        return genreRepository.save(genre);
     }
 
     public void delete(Long id) {
