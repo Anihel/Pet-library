@@ -21,7 +21,6 @@ jobs:
         image: postgres:17
         env:
           POSTGRES_DB: library_test
-          POSTGRES_URL: ${{ secrets.DB_LIBRARY_TEST_URL }}
           POSTGRES_USER: ${{ secrets.DB_LIBRARY_TEST_USERNAME }}
           POSTGRES_PASSWORD: ${{ secrets.DB_LIBRARY_TEST_PASSWORD }}
         ports:
