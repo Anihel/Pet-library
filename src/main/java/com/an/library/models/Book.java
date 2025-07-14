@@ -2,6 +2,8 @@ package com.an.library.models;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -11,6 +13,8 @@ import java.time.LocalDate;
 @Table(name = "book")
 @Getter
 @Setter
+@Builder
+@AllArgsConstructor
 public class Book {
 
     @Id
@@ -33,5 +37,7 @@ public class Book {
     @JoinColumn(name = "genre_id")
     @JsonBackReference("genre-book")
     private Genre genre;
+
+    public Book() {}
 
 }

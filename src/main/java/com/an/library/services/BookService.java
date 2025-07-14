@@ -21,14 +21,14 @@ public class BookService {
     }
 
     public Book create(BookRequestDTO bookRequestDTO) {
-        Book book = new Book();
         Genre genre = genreService.findById(bookRequestDTO.getGenreId());
         Author author = authorService.findById(bookRequestDTO.getAuthorId());
-
-        book.setTitle(bookRequestDTO.getTitle());
-        book.setGenre(genre);
-        book.setAuthor(author);
-        book.setPublished(bookRequestDTO.getPublishDate());
+        Book book = Book.builder()
+                .title(bookRequestDTO.getTitle())
+                .author(author)
+                .genre(genre)
+                .published(bookRequestDTO.getPublishDate())
+                .build();
 
         return bookRepository.save(book);
     }

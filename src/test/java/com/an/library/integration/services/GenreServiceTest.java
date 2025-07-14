@@ -1,6 +1,7 @@
-package com.an.library.services;
+package com.an.library.integration.services;
 
 import com.an.library.models.Genre;
+import com.an.library.services.GenreService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -1,4 +1,4 @@
-package com.an.library.controllers;
+package com.an.library.controllers.rest;
 
 import com.an.library.DTO.BookRequestDTO;
 import com.an.library.models.Book;
@@ -6,10 +6,9 @@ import com.an.library.services.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-@Controller
+@RestController
 @RequestMapping("/books")
 public class BooksController {
 
