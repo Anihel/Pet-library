@@ -7,6 +7,8 @@ import com.an.library.models.Genre;
 import com.an.library.repositories.BookRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class BookService {
 
@@ -37,4 +39,7 @@ public class BookService {
         bookRepository.deleteById(id);
     }
 
+    public List<Book> getAllBooks() {
+        return bookRepository.findAll();
+    }
 }
