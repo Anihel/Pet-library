@@ -1,27 +1,30 @@
-package com.an.library.controllers.rest;
+package com.an.library.controllers.html;
 
 import com.an.library.models.Genre;
 import com.an.library.services.GenreService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-@RestController
+@Controller
+@RequiredArgsConstructor
 @RequestMapping("/genre")
-public class GenreController {
+public class GenrePageController {
 
     private final GenreService genreService;
 
-    @Autowired
-    public GenreController(GenreService genreService) {
-        this.genreService = genreService;
+    @GetMapping("/create")
+    public String createPage(Model model) {
+        model.addAttribute("genre", new Genre());
+        return "admin/createGenre";
     }
 
     @PostMapping("/create")
-    public ResponseEntity<Genre> addNewGenre(@RequestBody Genre genre) {
+    public String addNewGenre(@ModelAttribute Genre genre) {
         genreService.save(genre);
-        return ResponseEntity.status(HttpStatus.CREATED).body(genre);
+        return "redirect:/genre/create";
     }
 
     @DeleteMapping("/delete/{id}")

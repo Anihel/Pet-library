@@ -1,27 +1,31 @@
-package com.an.library.controllers.rest;
+package com.an.library.controllers.html;
 
 import com.an.library.models.Author;
 import com.an.library.services.AuthorService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-@RestController
-@RequestMapping("/authors")
-public class AuthorsController {
+@Controller()
+@RequiredArgsConstructor
+@RequestMapping("/author")
+public class AuthorPageController {
 
     private final AuthorService authorService;
 
-    @Autowired
-    public AuthorsController(AuthorService authorService) {
-        this.authorService = authorService;
+    @GetMapping("/create")
+    public String AuthorPage(Model model) {
+        model.addAttribute("author", new Author());
+        return "admin/createAuthor";
     }
 
     @PostMapping("/create")
-    public ResponseEntity<Author> addNewAuthor(@RequestBody Author author) {
+    public String addNewAuthor(@ModelAttribute Author author) {
         authorService.save(author);
-        return ResponseEntity.status(HttpStatus.CREATED).body(author);
+        return "redirect:/author/create";
     }
 
     @DeleteMapping("/delete/{id}")
@@ -29,5 +33,4 @@ public class AuthorsController {
         authorService.delete(id);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
-
 }

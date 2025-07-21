@@ -22,6 +22,10 @@ public class BookService {
         this.genreService = genreService;
     }
 
+    public void createBook(Book book) {
+        bookRepository.save(book);
+    }
+
     public Book create(BookRequestDTO bookRequestDTO) {
         Genre genre = genreService.findById(bookRequestDTO.getGenreId());
         Author author = authorService.findById(bookRequestDTO.getAuthorId());

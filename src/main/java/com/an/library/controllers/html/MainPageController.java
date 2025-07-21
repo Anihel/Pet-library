@@ -10,4 +10,9 @@ public class MainPageController {
     public String index() {
         return "index";
     }
+
+    @GetMapping("/admin")
+    public String admin() {
+        return "admin/adminPage";
+    }
 }

@@ -4,6 +4,8 @@ import com.an.library.models.Author;
 import com.an.library.repositories.AuthorRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class AuthorService {
 
@@ -23,5 +25,9 @@ public class AuthorService {
 
     public Author findById(Long id) {
         return authorRepository.findById(id).orElse(null);
+    }
+
+    public List<Author> findAll() {
+        return authorRepository.findAll();
     }
 }

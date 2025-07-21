@@ -3,9 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Library</title>
+    <link rel="stylesheet" th:href="@{/css/button.css}">
 </head>
 <body>
     <h1>Добро пожаловать в библиотеку</h1>
-    <a th:href="@{/book/all}">Список книг</a>
+    <a th:href="@{/book/all}" class="button-link">Список книг</a>
+<br>
+<br>
+<br>
+    <a th:href="@{/admin}" class="button-link">Панель администратора</a>
 </body>
 </html>

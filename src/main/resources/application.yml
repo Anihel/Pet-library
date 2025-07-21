@@ -6,3 +6,7 @@ spring:
     url: ${DB_LIBRARY_URL}
     username: ${DB_LIBRARY_USERNAME}
     password: ${DB_LIBRARY_PASSWORD}
+
+server:
+  port: 50111
+  address: 0.0.0.0
