@@ -5,6 +5,7 @@
     <title>Все книги</title>
     <link rel="stylesheet" th:href="@{/css/button.css}">
     <link rel="stylesheet" th:href="@{/css/table.css}">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
     <style>
         table {
             border-collapse: collapse;
@@ -18,7 +19,8 @@
     </style>
 </head>
 <body>
-    <h1>Список книг</h1>
+<div class="center-container">
+    <h1 class="main-heading">Список книг</h1>
 
     <table>
         <thead>
@@ -38,8 +40,7 @@
         </tr>
         </tbody>
     </table>
-    <br>
     <a th:href="@{/}" class="button-link">На главную</a>
-
+</div>
 </body>
 </html>

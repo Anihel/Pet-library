@@ -8,10 +8,12 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <link rel="stylesheet" th:href="@{/css/button.css}">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
 
 </head>
 <body>
-<h1>Создание книги</h1>
+<div class="center-container">
+<h1 class="main-heading">Создание книги</h1>
 
 <form th:action="@{/book/create}" th:object="${book}" method="post">
 
@@ -39,13 +41,10 @@
         <a th:href="@{/genre/create}" class="mini-button">+</a>
     </div>
 
-    <br>
     <button type="submit">Добавить книгу</button>
 </form>
 
-<br>
 <a th:href="@{/admin}" class="button-link">Назад</a>
-<br>
 <a th:href="@{/}" class="button-link">На главную</a>
 
 <script>
@@ -58,5 +57,6 @@
         });
     });
 </script>
+</div>
 </body>
 </html>

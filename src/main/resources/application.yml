@@ -10,3 +10,9 @@ spring:
 server:
   port: 50111
   address: 0.0.0.0
+
+logging:
+  level:
+    org:
+      springframework:
+#        security: DEBUG

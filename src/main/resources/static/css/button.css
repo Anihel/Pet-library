@@ -1,12 +1,12 @@
 a {
-    color: #007bff; /* синий */
-    text-decoration: none; /* убрать подчёркивание */
+    color: #007bff;
+    text-decoration: none;
     font-weight: bold;
     transition: color 0.2s ease;
 }
 
 a:hover {
-    color: #0056b3; /* темно-синий при наведении */
+    color: #0056b3;
     text-decoration: underline;
 }
 body {
@@ -21,7 +21,7 @@ label {
     width: 300px !important;
 }
 button {
-    background-color: #4CAF50; /* зелёный */
+    background-color: #4CAF50;
     color: white;
     padding: 10px 20px;
     margin-top: 15px;
@@ -33,13 +33,13 @@ button {
 }
 
 button:hover {
-    background-color: #45a049; /* чуть темнее при наведении */
+    background-color: #45a049;
 }
 button:active {
     transform: scale(0.96);
 }
 button {
-    margin-top: 10px; /* или margin: 10px 0; для вертикальных отступов */
+    margin-top: 10px;
 }
 
 a.button-link {
@@ -58,7 +58,7 @@ a.button-link:hover {
 }
 a.button-link {
     margin-top: 10px;
-    display: inline-block; /* чтобы margin-top работал */
+    display: inline-block;
 }
 
 .input-with-button {
