@@ -4,23 +4,31 @@
     <meta charset="UTF-8">
     <title>Регистрация</title>
     <link rel="stylesheet" th:href="@{/css/button.css}">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
 <div class="center-container">
 <h2 class="main-heading">Регистрация</h2>
 
-<form th:action="@{/register}" th:object="${registrationRequest}" method="post">
-    <label for="username">Имя пользователя:</label>
-    <input id="username" type="text" th:field="*{username}" required/><br/>
+    <form th:action="@{/register}" th:object="${registrationRequest}" method="post" class="registration-form">
+        <div class="form-group">
+            <label for="username">Имя пользователя:</label>
+            <input type="text" id="username" th:field="*{username}" required/>
+        </div>
 
-    <label for="password">Пароль:</label>
-    <input id="password" type="password" th:field="*{password}" required/><br/>
+        <div class="form-group">
+            <label for="password">Пароль:</label>
+            <input type="password" id="password" th:field="*{password}" required/>
+        </div>
 
-    <label for="confirmPassword">Подтвердите пароль:</label>
-    <input id="confirmPassword" type="password" th:field="*{confirmPassword}" required/><br/>
+        <div class="form-group">
+            <label for="confirmPassword">Подтвердите пароль:</label>
+            <input type="password" id="confirmPassword" th:field="*{confirmPassword}" required/>
+        </div>
 
-    <button type="submit">Зарегистрироваться</button>
-</form>
+        <br>
+        <button type="submit" class="submit-btn">Зарегистрироваться</button>
+    </form>
 
 <p th:if="${error}" th:text="${error}" style="color:red"></p>
 

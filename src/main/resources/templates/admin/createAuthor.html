@@ -11,8 +11,10 @@
 <h1 class="main-heading">Добавить автора</h1>
 
 <form th:action="@{/author/create}" th:object="${author}" method="post">
+    <div class="form-group">
     <label for="name">Имя</label>
     <input type="text" id="name" th:field="*{name}" required>
+    </div>
     <button type="submit">Добавить</button>
 </form>
 <a th:href="@{/admin}" class="button-link">Назад</a>

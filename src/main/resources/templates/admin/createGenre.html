@@ -11,8 +11,10 @@
 <h1 class="main-heading">Добавить жанр</h1>
 
 <form th:action="@{/genre/create}" th:object="${genre}" method="post">
+    <div class="form-group">
     <label for="name">Название жанра</label>
     <input type="text" id="name" th:field="*{name}" required />
+    </div>
 
     <button type="submit">Добавить</button>
 </form>

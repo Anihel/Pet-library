@@ -9,17 +9,20 @@
     <style>
         table {
             border-collapse: collapse;
+            width: auto;         /* ширина по содержимому */
+            min-width: 600px;    /* чтобы не была слишком узкой */
         }
-        table, th, td {
-            border: 1px solid black;
-        }
+
         th, td {
-            padding: 5px;
+            border: 1px solid black;
+            padding: 8px 12px;
+            text-align: left;
         }
+
     </style>
 </head>
 <body>
-<div class="center-container">
+<div class="center-container-books">
     <h1 class="main-heading">Список книг</h1>
 
     <table>
