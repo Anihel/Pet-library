@@ -3,17 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <title>AdminPage</title>
-    <link rel="stylesheet" th:href="@{/css/button.css}">
     <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
 <div class="center-container">
-<h1 class="main-heading">Панель администратора</h1>
-<a th:href="@{/author/create}" class="button-link">Добавить автора</a>
-<a th:href="@{/genre/create}" class="button-link">Добавить жанр</a>
-<a th:href="@{/book/create}" class="button-link">Добавить книгу</a>
+    <h1 class="main-heading">Панель администратора</h1>
+    <div class="link-group">
+    <a th:href="@{/author/create}" class="button-link">Добавить автора</a>
+    <a th:href="@{/genre/create}" class="button-link">Добавить жанр</a>
+    <a th:href="@{/book/create}" class="button-link">Добавить книгу</a>
+    </div>
     <br>
-<a th:href="@{/}" class="button-link">На главную</a>
+    <div class="link-group">
+    <a th:href="@{/}" class="button-link">На главную</a>
+    </div>
 </div>
 </body>
 </html>

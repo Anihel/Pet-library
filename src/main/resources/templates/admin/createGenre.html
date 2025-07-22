@@ -1,26 +1,27 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Добавить жанр</title>
-    <link rel="stylesheet" th:href="@{/css/button.css}">
     <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
 <div class="center-container">
-<h1 class="main-heading">Добавить жанр</h1>
+    <h1 class="main-heading">Добавить жанр</h1>
 
-<form th:action="@{/genre/create}" th:object="${genre}" method="post">
-    <div class="form-group">
-    <label for="name">Название жанра</label>
-    <input type="text" id="name" th:field="*{name}" required />
+    <form th:action="@{/genre/create}" th:object="${genre}" method="post" class="registration-form">
+        <div class="form-group">
+            <label for="name">Название жанра</label>
+            <input type="text" id="name" th:field="*{name}" required />
+        </div>
+
+        <button type="submit" class="submit-btn">Добавить</button>
+    </form>
+
+    <div class="link-group">
+        <a th:href="@{/admin}" class="button-link">Назад</a>
+        <a th:href="@{/}" class="button-link">На главную</a>
     </div>
-
-    <button type="submit">Добавить</button>
-</form>
-
-<a th:href="@{/admin}" class="button-link">Назад</a>
-<a th:href="@{/}" class="button-link">На главную</a>
 </div>
 </body>
 </html>

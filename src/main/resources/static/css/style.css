@@ -1,95 +1,289 @@
-/* Сохраняем существующее */
-.main-heading {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #2c3e50;
+/* Базовые стили и шрифты */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f5f5f5;
+    margin: 0;
+    padding: 40px 0;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* Общий контейнер для всех страниц */
+.center-container {
+    background: #fff;
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    max-width: 600px;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Заголовки */
+h1.main-heading, h2.main-heading {
+    margin: 0 0 30px 0;
     text-align: center;
-    margin-top: 40px;
-    margin-bottom: 30px;
+    font-size: 2rem;
+    color: #2c3e50;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
     letter-spacing: 1px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.center-container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    margin: 80px auto;
-    max-width: 400px;        /* сузим ширину формы */
-    padding: 30px;
-    background-color: #fff;  /* белый фон */
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-.center-container-books {
-    margin: 80px auto;
-    padding: 30px;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-
-    /* Центрируем контейнер по горизонтали */
-    display: block;
-    width: fit-content;  /* ширина по содержимому */
-    min-width: 600px;    /* можно настроить минимальную ширину */
-}
-
-/* Стили для формы и полей */
-.registration-form {
-    width: 100%;
+/* Формы */
+form {
     display: flex;
     flex-direction: column;
 }
 
-.form-group {
-    margin-bottom: 15px;
-    display: flex;
-    flex-direction: column;
-}
-
-.form-group label {
+/* Метки */
+label {
+    margin-top: 15px;
     margin-bottom: 6px;
     font-weight: 600;
     color: #444;
+    user-select: none;
 }
 
-.form-group input {
+/* Поля ввода и селекты */
+input[type="text"],
+input[type="password"],
+input[type="date"],
+select {
+    width: 100%;
     padding: 8px 12px;
     font-size: 14px;
     border: 1px solid #ccc;
     border-radius: 6px;
+    box-sizing: border-box;
     transition: border-color 0.3s ease;
 }
 
-.form-group input:focus {
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="date"]:focus,
+select:focus {
     outline: none;
     border-color: #1976d2;
     box-shadow: 0 0 5px rgba(25, 118, 210, 0.5);
 }
 
+/* Контейнер для селекта с кнопкой + */
+.input-with-button {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-top: 6px;
+}
+
+/* Селект в input-with-button занимает всю ширину */
+.input-with-button select {
+    flex-grow: 1;
+}
+
+/* Кнопка + справа от селекта */
+.mini-button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 36px;
+    height: 36px;
+    font-size: 22px;
+    background-color: #1976d2;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    cursor: pointer;
+    user-select: none;
+    border: none;
+    transition: background-color 0.25s ease;
+}
+
+.mini-button:hover {
+    background-color: #125ca1;
+}
+
 /* Кнопка отправки */
-.submit-btn {
-    margin-top: 10px;
+button[type="submit"] {
+    margin-top: 25px;
     background-color: #1976d2;
     color: white;
     font-size: 16px;
-    padding: 12px;
+    padding: 12px 0;
     border: none;
     border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.25s ease;
+    width: 100%;
 }
 
-.submit-btn:hover {
+button[type="submit"]:hover {
     background-color: #125ca1;
 }
 
-/* Ошибка */
-p[th\\:if] {
+/* Контейнер для кнопок навигации */
+.button-links-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+/* Кнопки-ссылки */
+.button-link {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 6px;
+    transition: background-color 0.25s ease;
+    user-select: none;
+}
+
+.button-link:hover {
+    background-color: #0056b3;
+}
+
+/* Сообщения об ошибках */
+.error-msg {
     color: #d32f2f;
     margin-top: 12px;
     font-weight: 600;
+    text-align: center;
+}
+
+/* Таблицы для списков */
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    background: white;
+    margin-top: 15px;
+}
+
+th, td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+th {
+    background-color: #007bff;
+    color: white;
+    font-weight: 700;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tbody tr:hover {
+    background-color: #e1f0ff;
+}
+
+/* Закругление углов таблицы */
+thead tr th:first-child {
+    border-top-left-radius: 10px;
+}
+
+thead tr th:last-child {
+    border-top-right-radius: 10px;
+}
+
+tbody tr:last-child td:first-child {
+    border-bottom-left-radius: 10px;
+}
+
+tbody tr:last-child td:last-child {
+    border-bottom-right-radius: 10px;
+}
+.select-with-button {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* небольшой отступ между селектом и кнопкой */
+}
+
+.select-with-button select.select2 {
+    flex-grow: 1;   /* селект занимает всю доступную ширину */
+    width: auto !important; /* отменяем фиксированную ширину select2 */
+}
+
+.mini-button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    background-color: #1976d2;
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.3s ease;
+}
+
+.mini-button:hover {
+    background-color: #125ca1;
+}
+.link-group {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+/* ==== Главная страница ==== */
+
+.home-container {
+    background: #fff;
+    padding: 40px 50px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    max-width: 500px;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.home-heading {
+    text-align: center;
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 40px;
+}
+
+.home-link-group {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+.home-button {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 14px 0;
+    background-color: #1976d2;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    border-radius: 8px;
+    transition: background-color 0.25s ease;
+}
+
+.home-button:hover {
+    background-color: #125ca1;
 }

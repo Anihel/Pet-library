@@ -1,25 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Все книги</title>
-    <link rel="stylesheet" th:href="@{/css/button.css}">
-    <link rel="stylesheet" th:href="@{/css/table.css}">
     <link rel="stylesheet" th:href="@{/css/style.css}">
-    <style>
-        table {
-            border-collapse: collapse;
-            width: auto;         /* ширина по содержимому */
-            min-width: 600px;    /* чтобы не была слишком узкой */
-        }
-
-        th, td {
-            border: 1px solid black;
-            padding: 8px 12px;
-            text-align: left;
-        }
-
-    </style>
 </head>
 <body>
 <div class="center-container-books">
@@ -43,7 +27,9 @@
         </tr>
         </tbody>
     </table>
+    <div class="link-group">
     <a th:href="@{/}" class="button-link">На главную</a>
+    </div>
 </div>
 </body>
 </html>

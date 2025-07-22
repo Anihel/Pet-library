@@ -1,14 +1,13 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Регистрация</title>
-    <link rel="stylesheet" th:href="@{/css/button.css}">
     <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
 <div class="center-container">
-<h2 class="main-heading">Регистрация</h2>
+    <h2 class="main-heading">Регистрация</h2>
 
     <form th:action="@{/register}" th:object="${registrationRequest}" method="post" class="registration-form">
         <div class="form-group">
@@ -26,12 +25,10 @@
             <input type="password" id="confirmPassword" th:field="*{confirmPassword}" required/>
         </div>
 
-        <br>
         <button type="submit" class="submit-btn">Зарегистрироваться</button>
     </form>
 
-<p th:if="${error}" th:text="${error}" style="color:red"></p>
-
-    </div>
+    <p th:if="${error}" th:text="${error}" class="error-msg"></p>
+</div>
 </body>
 </html>

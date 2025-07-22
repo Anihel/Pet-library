@@ -1,22 +1,24 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org"
+<html lang="ru" xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="https://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
     <title>Library</title>
-    <link rel="stylesheet" th:href="@{/css/button.css}">
     <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
-    <div class="center-container">
-        <h1 class="main-heading">Добро пожаловать в библиотеку</h1>
+<div class="home-container">
+    <h1 class="home-heading">Добро пожаловать в библиотеку</h1>
 
-        <a th:href="@{/book/all}" class="button-link">Список книг</a>
+    <div class="home-link-group">
+        <a th:href="@{/book/all}" class="home-button">Список книг</a>
+
         <div sec:authorize="hasRole('ADMIN')">
-            <a th:href="@{/admin}" class="button-link">Панель администратора</a>
+            <a th:href="@{/admin}" class="home-button">Панель администратора</a>
         </div>
-        <br>
-        <a th:href="@{/logout}" class="button-link">Logout</a>
+
+        <a th:href="@{/logout}" class="home-button">Выйти</a>
     </div>
+</div>
 </body>
 </html>
